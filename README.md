@@ -85,6 +85,62 @@ a thin wrapper around the other.
     the top-right corner can be clicked with the mouse to open/close a full
     command legend at any time.
 
+## Screenshots
+
+### Startup & help
+
+The intro card stays until you press Enter; `? help` opens the same command
+legend anytime while you work.
+
+| Startup card | Help panel |
+| --- | --- |
+| ![Startup screen](screenshots/start-screen.png) | ![Help menu](screenshots/help-menu.jpeg) |
+
+### Case 1 — UML activity diagram
+
+Drawn live with gesture + speech: **start** / **final** terminals, **action**
+nodes (`check stock`, `proceed to pay`, `notify user`), a **decision** diamond
+(`in stock?`) with typed **yes** / **no** branch labels on the outgoing
+arrows. Export keeps the same icons (filled circle, bullseye final, rounded
+rects, diamond) as SVG.
+
+| Live camera overlay | Exported SVG |
+| --- | --- |
+| ![Case 1 live](screenshots/case1/case1-live.jpeg) | ![Case 1 SVG](screenshots/case1/case1-svg-as-jp.jpeg) |
+
+### Case 2 — architecture sketch
+
+Icons from spoken labels (and the in-box line → **server** gesture): **user**,
+**cloud**, **database**, **server**, with bidirectional connectors between
+pairs. The live view is the webcam overlay; the SVG is the clean export.
+
+| Live camera overlay | Exported SVG |
+| --- | --- |
+| ![Case 2 live](screenshots/case2/case2.png) | ![Case 2 SVG](screenshots/case2/case2-svg.jpeg) |
+
+### Icons & connectors in progress
+
+A smaller architecture fragment mid-session — stick-figure **user**, **cloud**,
+cylinder **database**, and an elbow connector routed from the drawn stroke.
+
+![Architecture in progress](screenshots/3.png)
+
+### Multimodal pause
+
+Open palm **and** saying **"stop"** together freezes drawing and speech.
+Neither channel alone can pause. Press Enter to resume.
+
+![Paused state](screenshots/stop-pause.png)
+
+### Point + delete
+
+Point at a shape (green fingertip, no pinch) and say **"delete this"** — the
+target highlights, then a red flash confirms removal.
+
+| Aiming / highlight | Delete flash |
+| --- | --- |
+| ![Delete aim](screenshots/delete1.png) | ![Delete flash](screenshots/delete2.png) |
+
 ## Design decisions
 
 A few choices came out of testing the system live rather than how it was
