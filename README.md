@@ -31,10 +31,9 @@ a thin wrapper around the other.
   independent, redundant paths to the same result, and it means a stray
   misheard word or a stray hand shape can never freeze a live
   presentation by accident.
-- Deictic reference resolution ("this", "that") is done by matching the
-  fingertip's position at the *exact timestamp of the spoken word* (not
-  the end of the sentence, not when Vosk finishes finalizing), and falls
-  back to a clarification prompt when two shapes are ambiguous.
+- Deictic reference resolution (“this”, “that”) is performed by matching the
+  fingertip position with the currently pointed shape. If multiple shapes are
+  ambiguous, the system falls back to a clarification prompt.
 
 ## How to use it
 
