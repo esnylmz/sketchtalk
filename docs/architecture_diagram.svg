@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="480" viewBox="0 0 880 480" font-family="sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- input devices -->
+  <rect x="20" y="40" width="140" height="50" rx="6" fill="none" stroke="black" stroke-width="2" />
+  <text x="90" y="70" text-anchor="middle" font-size="14">Webcam</text>
+
+  <rect x="20" y="340" width="140" height="50" rx="6" fill="none" stroke="black" stroke-width="2" />
+  <text x="90" y="370" text-anchor="middle" font-size="14">Microphone</text>
+
+  <!-- gesture pipeline -->
+  <rect x="230" y="40" width="150" height="50" rx="6" fill="none" stroke="black" stroke-width="2" />
+  <text x="305" y="60" text-anchor="middle" font-size="13">Hand Tracker</text>
+  <text x="305" y="76" text-anchor="middle" font-size="10">(MediaPipe, pinch)</text>
+
+  <rect x="450" y="40" width="150" height="50" rx="6" fill="none" stroke="black" stroke-width="2" />
+  <text x="525" y="60" text-anchor="middle" font-size="13">Stroke Buffer +</text>
+  <text x="525" y="76" text-anchor="middle" font-size="13">Shape Recognizer</text>
+
+  <!-- speech pipeline -->
+  <rect x="230" y="340" width="150" height="50" rx="6" fill="none" stroke="black" stroke-width="2" />
+  <text x="305" y="360" text-anchor="middle" font-size="13">Speech Engine</text>
+  <text x="305" y="376" text-anchor="middle" font-size="10">(Vosk, word timestamps)</text>
+
+  <rect x="450" y="340" width="150" height="50" rx="6" fill="none" stroke="black" stroke-width="2" />
+  <text x="525" y="360" text-anchor="middle" font-size="13">Command Parser</text>
+  <text x="525" y="376" text-anchor="middle" font-size="10">transcript -&gt; intent</text>
+
+  <!-- fusion + store -->
+  <rect x="670" y="190" width="170" height="60" rx="6" fill="none" stroke="black" stroke-width="2.5" />
+  <text x="755" y="215" text-anchor="middle" font-size="14" font-weight="bold">Fusion Engine</text>
+  <text x="755" y="232" text-anchor="middle" font-size="10">deictic resolve, connect,</text>
+  <text x="755" y="245" text-anchor="middle" font-size="10">delete</text>
+
+  <rect x="430" y="190" width="170" height="60" rx="6" fill="none" stroke="black" stroke-width="2.5" />
+  <text x="515" y="215" text-anchor="middle" font-size="14" font-weight="bold">Diagram Store</text>
+  <text x="515" y="232" text-anchor="middle" font-size="10">shapes, edges,</text>
+  <text x="515" y="245" text-anchor="middle" font-size="10">connector routing</text>
+
+  <!-- outputs -->
+  <rect x="670" y="40" width="170" height="50" rx="6" fill="none" stroke="black" stroke-width="2" />
+  <text x="755" y="60" text-anchor="middle" font-size="13">Live OpenCV View</text>
+  <text x="755" y="76" text-anchor="middle" font-size="10">frame overlay</text>
+
+  <rect x="670" y="340" width="170" height="50" rx="6" fill="none" stroke="black" stroke-width="2" />
+  <text x="755" y="360" text-anchor="middle" font-size="13">SVG Renderer +</text>
+  <text x="755" y="376" text-anchor="middle" font-size="13">Session Logger</text>
+
+  <!-- arrows: gesture path -->
+  <line x1="160" y1="65" x2="228" y2="65" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="380" y1="65" x2="448" y2="65" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="525" y1="90" x2="515" y2="188" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="305" y1="90" x2="700" y2="188" stroke="black" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow)" />
+  <text x="470" y="140" font-size="10" font-style="italic">fingertip position (pointer buffer)</text>
+
+  <!-- arrows: speech path -->
+  <line x1="160" y1="365" x2="228" y2="365" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="380" y1="365" x2="448" y2="365" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="600" y1="360" x2="672" y2="255" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- diagram store <-> fusion -->
+  <line x1="600" y1="215" x2="668" y2="215" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="668" y1="235" x2="600" y2="235" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- store -> outputs -->
+  <line x1="530" y1="188" x2="700" y2="92" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="530" y1="252" x2="700" y2="338" stroke="black" stroke-width="2" marker-end="url(#arrow)" />
+
+  <text x="440" y="460" text-anchor="middle" font-size="11" font-style="italic">
+    Gesture always supplies geometry; meaning (label, icon, connect/delete) can come from speech, a dedicated gesture, or pointing + a spoken demonstrative.
+  </text>
+</svg>

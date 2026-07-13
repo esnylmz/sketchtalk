@@ -1,0 +1,7 @@
+vosk==0.3.45
+mediapipe==0.10.35
+opencv-python==5.0.0.93
+sounddevice>=0.4.6
+numpy==2.5.1
+matplotlib>=3.7.0
+better-profanity>=0.7.0
